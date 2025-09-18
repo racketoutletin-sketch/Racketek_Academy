@@ -101,7 +101,7 @@ export default function CoachingPage() {
       {/* Image Right */}
       <div className="flex justify-center md:justify-center">
         <img
-          src="/professional.png"
+          src="/professional.jpg"
           alt="Professional Badminton Coaching"
           className="w-full max-w-lg object-contain rounded-lg shadow-md"
         />
