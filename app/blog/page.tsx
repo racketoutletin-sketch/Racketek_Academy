@@ -100,7 +100,7 @@ export default function BlogPage() {
             <Badge variant="secondary" className="mb-4">
               📚 Knowledge Hub
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-balance">
+            <h1 className="text-4xl md:text-7xl font-bold text-balance">
               Badminton
               <span className="text-primary block">Blog & Resources</span>
             </h1>

@@ -76,7 +76,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center py-10">
             <div className="space-y-6">
 
-              <h1 className="text-4xl md:text-6xl font-bold text-balance">
+              <h1 className="text-4xl md:text-7xl font-bold text-balance">
                 Our Story &<span className="text-primary block">Mission</span>
               </h1>
               <p className="text-xl text-muted-foreground text-pretty">
