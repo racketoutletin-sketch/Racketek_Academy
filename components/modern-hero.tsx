@@ -35,13 +35,13 @@ export function ModernHero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="text-lg px-8">
+            <Button size="lg" className="text-lg px-8 w-fit">
               Join Racketek Now
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20"
+              className="text-lg px-8 bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20 w-fit"
             >
               <Play className="mr-2 h-5 w-5" />
               Explore Our Academy

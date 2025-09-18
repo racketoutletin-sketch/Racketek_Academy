@@ -264,13 +264,13 @@ export default function ContactPage() {
             Don't wait - your badminton journey starts with a single step. Contact us today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="px-8">
+            <Button size="lg" variant="secondary" className="px-8 m-auto">
               Book Your First Session
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+              className="m-auto px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
             >
               Call Now
             </Button>

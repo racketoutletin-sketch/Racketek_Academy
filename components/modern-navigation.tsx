@@ -48,12 +48,12 @@ export function ModernNavigation() {
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
+            <Button variant="ghost" size="icon" >
+              <Menu className="h-10 w-10" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <div className="flex flex-col space-y-4 mt-6">
+          <SheetContent side="right" className="w-[300px] sm:w-[400px] ml-4">
+            <div className="flex flex-col space-y-4 mt-6 md:ml-10 lg:ml-20 px-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}

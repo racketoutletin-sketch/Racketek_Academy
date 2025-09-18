@@ -285,13 +285,13 @@ export default function BlogPage() {
             what you've learned!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="px-8">
+            <Button size="lg" variant="secondary" className="px-8 m-auto">
               Book a Session
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+              className=" m-auto px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
             >
               Join Online Membership
             </Button>

@@ -271,14 +271,14 @@ export default function ProgramsPage() {
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             Spaces fill up quickly! Register early to secure your spot in our next program.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" variant="secondary" className="px-6">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <Button size="lg" variant="secondary" className="px-6 m-auto">
               Register Now
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="px-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+              className="m-auto px-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
             >
               Download Brochure
             </Button>

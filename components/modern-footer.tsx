@@ -43,9 +43,9 @@ export function ModernFooter() {
             <p className="text-muted-foreground mb-6">
               Get the latest badminton tips, training insights, and exclusive offers delivered to your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto items-center">
               <Input placeholder="Enter your email" className="flex-1" />
-              <Button>Subscribe</Button>
+              <Button className="w-fit">Subscribe</Button>
             </div>
           </div>
         </div>

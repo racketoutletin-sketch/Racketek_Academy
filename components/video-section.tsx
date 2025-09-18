@@ -137,11 +137,11 @@ export function VideoSection() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 w-fit">
                   Start Your Journey
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="w-fit">
                   Learn More About Us
                 </Button>
               </div>

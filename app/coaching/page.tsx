@@ -295,14 +295,14 @@ export default function CoachingPage() {
           <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
             Start your journey with Racketek Academy and see significant improvements in your badminton skills.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="px-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" variant="secondary" className="px-8 w-fit sm:w-auto">
               Book First Session
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+              className=" w-fit sm:w-auto px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
             >
               Contact Coach
             </Button>
