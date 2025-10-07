@@ -143,12 +143,14 @@ export default function ContactPage() {
                       <SelectValue placeholder="Select your interest" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="online-membership">Online Membership</SelectItem>
-                      <SelectItem value="group-sessions">Group Sessions</SelectItem>
-                      <SelectItem value="private-coaching">Private Coaching</SelectItem>
-                      <SelectItem value="holiday-camps">Holiday Camps</SelectItem>
-                      <SelectItem value="competition-prep">Competition Preparation</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                              <SelectItem value="kids-beginner1">Kids Beginner 1 (4:00 - 5:00 PM)</SelectItem>
+                              <SelectItem value="kids-beginner2">Kids Beginner 2 (5:00 - 6:00 PM)</SelectItem>
+                              <SelectItem value="kids-amateur">Kids Amateur (4:00 - 5:30 PM)</SelectItem>
+                              <SelectItem value="kids-intermediate">Kids Intermediate (5:00 - 7:00 PM)</SelectItem>
+                              <SelectItem value="adults-morning1">Adults Morning (7:00 - 8:00 AM)</SelectItem>
+                              <SelectItem value="adults-morning2">Adults Morning (8:00 - 9:00 AM)</SelectItem>
+                              <SelectItem value="adults-evening">Adults Evening (7:00 - 8:00 PM)</SelectItem>
+                              <SelectItem value="weekend-class">Weekend Class (Sat & Sun 11:00 AM - 12:00 PM)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
