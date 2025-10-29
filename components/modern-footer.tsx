@@ -5,23 +5,26 @@ import { Separator } from "@/components/ui/separator"
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter } from "lucide-react"
 
 const navigation = {
-  services: [
-    { name: "Online Membership", href: "/online-membership" },
-    { name: "Group Sessions", href: "/coaching" },
-    { name: "Private Coaching", href: "/coaching" },
-    { name: "Holiday Programs", href: "/programs" },
-  ],
+services: [
+  { name: "Beginner", href: "/programs/beginner" },
+  { name: "Amateur", href: "/programs/amateur" },
+  { name: "Intermediate / Advanced", href: "/programs/advanced" },
+  { name: "Holiday", href: "/programs/holiday" },
+  { name: "Personal Coaching", href: "/programs/personal" },
+  { name: "Demo Class", href: "/programs/demo" },
+],
+
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Our Coaches", href: "/about" },
-    { name: "Blog", href: "/blog" },
+    { name: "Our Coaches", href: "/coaches" },
+    // { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ],
   support: [
-    { name: "Book a Session", href: "/contact" },
-    { name: "FAQ", href: "/contact" },
-    { name: "Locations", href: "/contact" },
-    { name: "Pricing", href: "/coaching" },
+    { name: "Book a Session", href: "#cta" },
+{ name: "FAQ", href: "/contact#faq" },
+
+    { name: "Locations", href: "/contact#maps" },
   ],
 }
 
@@ -70,7 +73,7 @@ export function ModernFooter() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm">
                   <Phone className="h-4 w-4 text-primary" />
-                  <span>799 699 25 99</span>
+                  <span>+91 96159 61999</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Mail className="h-4 w-4 text-primary" />
@@ -78,7 +81,7 @@ export function ModernFooter() {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <MapPin className="h-4 w-4 text-primary" />
-                  <span>Multiple locations across Bengaluru</span>
+                  <span>Bengaluru</span>
                 </div>
               </div>
 

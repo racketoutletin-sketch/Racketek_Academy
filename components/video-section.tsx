@@ -33,7 +33,7 @@ export function VideoSection() {
               Why Our Academy Stands Out
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover what makes The Badminton Hub Melbourne the premier choice for badminton training in Australia
+              Discover what makes Racketek Academy the premier choice for badminton training in Bengaluru
             </p>
           </div>
 
@@ -45,12 +45,12 @@ export function VideoSection() {
                   <video
                     id="academy-video"
                     className="w-full h-full object-cover"
-                    poster="/video-thumbnail.jpg"
+                    poster="/image_5.jpg"
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                     controls={false}
                   >
-                    <source src="/academy-intro-video.mp4" type="video/mp4" />
+                    <source src="/sample_vid.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
 
@@ -90,7 +90,7 @@ export function VideoSection() {
             {/* Content */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-4">World-Class Training Facility</h3>
+                <h3 className="text-2xl font-bold mb-4">Top-Class Training Facility</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Our state-of-the-art facility features professional-grade courts, advanced training equipment, and a
                   supportive environment designed to help players of all levels reach their potential.
@@ -100,7 +100,7 @@ export function VideoSection() {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">15+</span>
+                    <span className="text-2xl font-bold text-primary">10+</span>
                   </div>
                   <h4 className="font-semibold">Years Experience</h4>
                   <p className="text-sm text-muted-foreground">
@@ -110,7 +110,7 @@ export function VideoSection() {
 
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">500+</span>
+                    <span className="text-2xl font-bold text-primary">400+</span>
                   </div>
                   <h4 className="font-semibold">Students Trained</h4>
                   <p className="text-sm text-muted-foreground">
@@ -133,17 +133,19 @@ export function VideoSection() {
                     <span className="text-2xl font-bold text-primary">95%</span>
                   </div>
                   <h4 className="font-semibold">Success Rate</h4>
-                  <p className="text-sm text-muted-foreground">Students see measurable improvement within 3 months</p>
+                  <p className="text-sm text-muted-foreground">Students see measurable improvements</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 w-fit">
+                <a href="/contact">
+                                <Button size="lg" className="bg-primary hover:bg-primary/90 w-fit">
                   Start Your Journey
-                </Button>
-                <Button size="lg" variant="outline" className="w-fit">
+                </Button></a>
+                <a href="/about">
+                                <Button size="lg" variant="outline" className="w-fit">
                   Learn More About Us
-                </Button>
+                </Button></a>
               </div>
             </div>
           </div>

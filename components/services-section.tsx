@@ -6,61 +6,92 @@ import Link from "next/link"
 
 export function ServicesSection() {
   const services = [
-    {
-      icon: Monitor,
-      title: "Online Coaching Membership",
-      description: "Virtual coaching with video analysis, technique guides, and personalized feedback",
-      price: "₹7,999/month",
-      features: ["Video analysis", "Technique guides", "Live Q&A sessions", "Progress tracking"],
-      badge: "Most Popular",
-      href: "/online-membership",
-    },
-    {
-      icon: Users,
-      title: "Group Sessions",
-      description: "Local in-person group training with structured skill development",
-      price: "₹3,500 per session",
-      features: ["Small groups (max 8)", "All skill levels", "Equipment provided", "Flexible scheduling"],
-      badge: "Local Favorite",
-      href: "/coaching",
-    },
-    {
-      icon: User,
-      title: "Private Coaching",
-      description: "One-on-one personalized training tailored to your specific needs",
-      price: "From ₹6,500/hour",
-      features: ["Customized training", "Flexible locations", "Racket & shuttles included", "Progress reports"],
-      badge: null,
-      href: "/coaching",
-    },
-    {
-      icon: Calendar,
-      title: "Holiday Programs",
-      description: "5-day intensive camps during school holidays for rapid improvement",
-      price: "₹22,000 per camp",
-      features: ["5 full days", "All skill levels", "Daily progress tracking", "Certificate included"],
-      badge: "Limited Spots",
-      href: "/programs",
-    },
-    {
-      icon: GraduationCap,
-      title: "Skill Clinics",
-      description: "Specialized 3.5-hour workshops focusing on specific techniques",
-      price: "₹15,000 per clinic",
-      features: ["Video analysis", "Small groups", "Technique filming", "Real-time feedback"],
-      badge: null,
-      href: "/programs",
-    },
-    {
-      icon: BookOpen,
-      title: "Free Resources",
-      description: "Access our blog, technique guides, and training tips",
-      price: "Free",
-      features: ["Weekly blog posts", "Technique videos", "Training schedules", "Equipment guides"],
-      badge: "Free",
-      href: "/blog",
-    },
-  ]
+  {
+    icon: GraduationCap,
+    title: "Beginner Program",
+    description:
+      "Perfect for newcomers to badminton — learn the basics of grip, footwork, and rally consistency.",
+    features: [
+      "Fundamentals of strokes",
+      "Basic footwork patterns",
+      "Game awareness training",
+      "Beginner-friendly drills",
+    ],
+    badge: "Start Here",
+    href: "/programs/beginner",
+  },
+  {
+    icon: Users,
+    title: "Amateur Program",
+    description:
+      "Designed for players who understand the basics and want to improve gameplay consistency and endurance.",
+    features: [
+      "Match-based training",
+      "Intermediate-level drills",
+      "Physical conditioning",
+      "Game analysis & feedback",
+    ],
+    badge: "Popular Choice",
+    href: "/programs/amateur",
+  },
+  {
+    icon: Monitor,
+    title: "Intermediate / Advanced Program",
+    description:
+      "High-intensity sessions focused on competition readiness, advanced tactics, and skill refinement.",
+    features: [
+      "Advanced rally patterns",
+      "Tactical play & positioning",
+      "Endurance & speed training",
+      "Tournament preparation",
+    ],
+    badge: "Pro Level",
+    href: "/programs/advanced",
+  },
+  {
+    icon: Calendar,
+    title: "Holiday Program",
+    description:
+      "Short-term intensive camps during holidays to boost player performance and fitness.",
+    features: [
+      "5-day coaching camp",
+      "Skill development focus",
+      "Daily progress review",
+      "Certificate of completion",
+    ],
+    badge: "Limited Spots",
+    href: "/programs/holiday",
+  },
+  {
+    icon: User,
+    title: "Personal Coaching",
+    description:
+      "One-on-one personalized training sessions tailored to individual goals and skill gaps.",
+    features: [
+      "Custom session plans",
+      "Private training slots",
+      "Video analysis support",
+      "Performance tracking",
+    ],
+    badge: "Premium",
+    href: "/programs/personal",
+  },
+  {
+    icon: BookOpen,
+    title: "Demo Class",
+    description:
+      "Try a single session to experience our structured coaching and training environment.",
+    features: [
+      "Free trial session",
+      "Coach assessment",
+      "Skill level evaluation",
+      "Feedback & recommendations",
+    ],
+    badge: "Free Trial",
+    href: "/programs/demo",
+  },
+]
+
 
   return (
     <section className="py-20 bg-muted/30">
@@ -89,9 +120,6 @@ export function ServicesSection() {
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </div>
                 <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
-                <div className="pt-2">
-                  <p className="text-2xl font-bold text-primary">{service.price}</p>
-                </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-2">

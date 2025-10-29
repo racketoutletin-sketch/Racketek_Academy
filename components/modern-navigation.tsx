@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Phone, Mail, ChevronDown } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,14 +17,15 @@ const navigation = [
   {
     name: "Programs",
     children: [
-      { name: "Beginner Program", href: "/programs/beginner" },
+      { name: "Beginner", href: "/programs/beginner" },
       { name: "Amateur", href: "/programs/amateur" },
-      { name: "Intermediate Program", href: "/programs/intermediate" },
-      { name: "Advanced Program", href: "/programs/advanced" },
-
+      { name: "Intermediate/Advanced", href: "/programs/advanced" },
+      { name: "Holiday", href: "/programs/holiday" },
+      { name: "Personal Coaching", href: "/programs/personal" },
+      { name: "Demo Class", href: "/programs/demo" },
     ],
   },
-  { name: "Centers", href: "/centers" },
+        { name: "Membership", href: "/membership" },
   {
     name: "Coaches",
     children: [
@@ -32,7 +33,6 @@ const navigation = [
       { name: "Apply as Coach", href: "/coaches/hire" },
     ],
   },
-  { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
@@ -40,42 +40,72 @@ const navigation = [
 export function ModernNavigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [scrollDir, setScrollDir] = useState<"up" | "down">("up")
 
   const toggleDropdown = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name)
   }
 
   useEffect(() => {
+    let lastScrollY = window.scrollY
+    let ticking = false
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50) // Adjust the scroll threshold as needed
+      const currentScrollY = window.scrollY
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const diff = currentScrollY - lastScrollY
+
+          // Add a scroll threshold (10px) to prevent flickering
+          if (Math.abs(diff) > 30) {
+            if (diff > 0 && scrollDir !== "down") {
+              setScrollDir("down")
+            } else if (diff < 0 && scrollDir !== "up") {
+              setScrollDir("up")
+            }
+            lastScrollY = currentScrollY
+          }
+
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [scrollDir])
+
+  const isShrunk = scrollDir === "down"
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300`}
+      className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur transition-all duration-500 ease-in-out`}
       style={{
-        height: isScrolled ? "56px" : "80px", // shrink header height
+        height: isShrunk ? "56px" : "80px",
+        boxShadow: isShrunk ? "0 2px 6px rgba(0,0,0,0.05)" : "none",
       }}
     >
       <div className="flex items-center justify-between h-full px-6 md:px-12 transition-all duration-300">
+        {/* Logo + Title */}
         <Link href="/" className="flex items-center space-x-2">
           <div
-            className="flex items-center justify-center transition-all duration-300"
+            className="flex items-center justify-center transition-all duration-500 ease-in-out"
             style={{
-              width: isScrolled ? "50px" : "72px",
-              height: isScrolled ? "40px" : "72px",
+              width: isShrunk ? "50px" : "72px",
+              height: isShrunk ? "40px" : "72px",
             }}
           >
-            <img src="/logo.png" alt="Racketek Academy Logo" className="w-full h-full object-contain" />
+            <img
+              src="/logo.png"
+              alt="Racketek Academy Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <span
-            className={`font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-gray-600 transition-all duration-300`}
-            style={{ fontSize: isScrolled ? "1rem" : "1.25rem" }}
+            className={`font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-gray-600 transition-all duration-500 ease-in-out`}
+            style={{ fontSize: isShrunk ? "1rem" : "1.25rem" }}
           >
             Racketek Academy
           </span>
@@ -110,12 +140,14 @@ export function ModernNavigation() {
           )}
         </nav>
 
+        {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-4">
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Phone className="h-4 w-4" />
-            <span>799 699 25 99</span>
-          </div>
-          <Button>Book Now</Button>
+          <a href="https://www.racketoutlet.in/" target="_blank" rel="noopener noreferrer">
+            <Button>Shop us</Button>
+          </a>
+          <a href="https://www.tournament365.in/" target="_blank" rel="noopener noreferrer">
+            <Button>Events</Button>
+          </a>
         </div>
 
         {/* Mobile Navigation */}
@@ -125,7 +157,10 @@ export function ModernNavigation() {
               <Menu className="h-10 w-10" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px] ml-4 overflow-y-auto">
+          <SheetContent
+            side="right"
+            className="w-[300px] sm:w-[400px] ml-4 overflow-y-auto"
+          >
             <div className="flex flex-col space-y-4 mt-6 px-4">
               {navigation.map((item) =>
                 item.children ? (
@@ -168,16 +203,14 @@ export function ModernNavigation() {
                 )
               )}
 
-              <div className="pt-4 border-t">
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-4">
-                  <Phone className="h-4 w-4" />
-                  <span>799 699 25 99</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-4">
-                  <Mail className="h-4 w-4" />
-                  <span>racketoutlet.in@gmail.com</span>
-                </div>
-                <Button className="w-full">Book Now</Button>
+              {/* Mobile Buttons */}
+              <div className="pt-4 border-t flex flex-col space-y-3">
+                <a href="https://www.racketoutlet.in/" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full">Shop us</Button>
+                </a>
+                <a href="https://www.tournament365.in/" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full">Events</Button>
+                </a>
               </div>
             </div>
           </SheetContent>
